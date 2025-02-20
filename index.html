@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie d'Art en WebXR</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="js/components/artwork.js"></script>
+    <script src="js/components/artwork-highlight.js"></script>
+    <script src="js/components/artwork-audio.js"></script>
+    <script src="js/components/artwork-info.js"></script>
+
+    
+</head>
+<body>
+    <a-scene background="color: #ECECEC">
+        <!-- Lumières -->
+        <a-light type="ambient" intensity="0.5"></a-light>
+        <a-light type="directional" position="3 5 2" intensity="0.8"></a-light>
+
+        <!-- Ciel -->
+        <a-sky color="#DDDDFF"></a-sky>
+
+        <!-- Ciel -->
+        <a-gltf-model
+        gltf-model="Ressource/assets/muse.glb" 
+        position="0 0 0" 
+        scale="1 1 1"
+        rotation="0 0 0">
+        ></a-gltf-model>
+    
+
+        <!-- Modèles 3D -->
+        <a-entity id="belier-container">
+        <a-entity 
+            gltf-model="Ressource/assets/belier.glb" 
+            position="-12.153 2.031 -7.220" 
+            scale="1 1 1"
+            rotation="270 0 0"
+            artwork-scale
+            artwork-audio="src: Ressource/audio/belier.mp3"
+            artwork-info="title:Bélier (Mésopotamie, art antique)
+                            ; description: Cette sculpture mésopotamienne simple
+                            représente un bélier, souvent sculpté avec des 
+                            formes épurées, sans décorations complexes. Le 
+                            est un symbole de puissance et de fertilité dans
+                            l’art antique. Il est souvent vu dans les artéfacts 
+                            provenant de la région mésopotamienne, où il 
+                            des valeurs telles que la virilité et la protection.;
+                            panelPosition: 1.718 -0.302 0.663; 
+                            panelRotation: 79.254 36.807 35.973">
+        </a-entity>
+        </a-entity>
+
+        <a-entity id="buste-femme-container">
+        <a-entity 
+            gltf-model="Ressource/assets/buste_femme1.glb" 
+            position="-20.043 2.864 -7.180" 
+            scale="1 1 1"
+            rotation="270 0 0"
+            artwork-scale
+            artwork-audio="src: Ressource/audio/buste_femme.mp3"
+            artwork-info="title: Buste Homme; description: Une sculpture représentant un homme avec des traits détaillés.;
+            panelPosition: 2.102 -1.006 0.373; 
+            panelRotation: 79.254 36.807 35.973">
+        </a-entity>
+        </a-entity>
+
+        <a-entity id="buste-femme-container">
+        <a-entity 
+            gltf-model="Ressource/assets/buste_femme.glb" 
+            position="-20.129 2.968 7.085" 
+            scale="1 1 1"
+            rotation="270 0 0"
+            artwork-scale
+            artwork-audio="src: Ressource/audio/buste_femme.mp3"
+            artwork-info="title: Buste Homme; description: Une sculpture représentant un homme avec des traits détaillés.;
+            panelPosition:-1.483 0.931 0.251 ; 
+            panelRotation: -89.070 164.397 14.602">
+        </a-entity>
+        </a-entity>
+
+        <a-entity id="machin-maya-container">
+        <a-entity 
+            gltf-model="Ressource/assets/machin_maya.glb" 
+            position="-4.001 2.320 -7.111" 
+            scale="1 1 1"
+            rotation="-83.218 177.964 0.000"
+            artwork-scale
+            artwork-audio="src: Ressource/audio/machin_maya.mp3"
+            artwork-info="title: Buste Homme; 
+                        description:Cette sculpture repose sur un socle rectangulaire et 
+                                    représente une figure stylisée, dont les formes semblent 
+                                    empilées ou fusionnées. L’aspect rugueux et taillé de la pierre
+                                    lui donne une apparence archaïque, évoquant les traditions sculpturales 
+                                    des civilisations anciennes. La silhouette générale rappelle certaines
+                                    figures précolombiennes ou toltèques, où les formes humaines et animales
+                                    sont souvent représentées de manière géométrique et simplifiée.;
+                                    panelPosition: 1.729 -0.640 0.670; 
+                                    panelRotation: 79.254 36.807 35.973">
+        </a-entity>
+        </a-entity>
+
+        <a-entity id="statut-centrale-container">
+        <a-entity 
+            gltf-model="Ressource/assets/statut_centrale.glb" 
+            position="-12.183 3.029 0" 
+            scale="1 1 1"
+            rotation="270 0 0"
+            artwork-scale
+            artwork-audio="src: Ressource/audio/statut_centrale.mp3"
+            artwork-info="title: Aphrodite, la déesse de l’amour; 
+                                description:Chef-d’œuvre de la sculpture
+                                grecque antique, la Vénus de Milo est une 
+                                statue en marbre représentant Aphrodite, la 
+                                de l’amour et de la beauté. Découverte 
+                                1820 sur l’île de Milos, elle est aujourd’hui 
+                                exposée au musée du Louvre à Paris.;
+                                panelPosition: 0.667 1.921 0.965; 
+                                panelRotation: 10.277 85.631 85.631
+            ">
+        </a-entity>
+        </a-entity>
+        
+        <a-entity id="buste-homme-container">
+        <a-entity 
+            gltf-model="Ressource/assets/buste_homme.glb" 
+            position="-4.023 1.987 7.079" 
+            scale="1 1 1"
+            rotation="270 0 0"
+            artwork-scale
+            artwork-audio="src: Ressource/audio/buste_homme.mp3"
+            artwork-info="title: Buste de Beethoven (1845, Louis Tullius)
+                            ; description:  La sculpture montre la profondeur de l’intensité intérieure de Beethoven,
+                             soulignant son caractère résolu et son génie créatif. Son regard est à 
+                             la fois intense et pénétrant, comme s’il était concentré sur la musique et ses idées.
+                            ; panelPosition: -1.461 0.602 0.602; 
+                             panelRotation: -89.070 164.397 14.602
+            ">
+        </a-entity>
+        </a-entity>
+ 
+        <a-entity id="enfant-container">
+        <a-entity 
+            gltf-model="Ressource/assets/enfant.glb" 
+            position="-12.298 2.219 6.989" 
+            scale="1 1 1"
+            rotation="270 0 0"
+            artwork-scale
+            artwork-highlight
+            artwork-audio="src: Ressource/audio/enfant.mp3"
+            artwork-info="title: Enfant (Jean-Baptiste)
+                            ; description: Cette sculpture d’un enfant, souvent représenté
+                            en plein mouvement, montre un jeune visage plein de vivacité
+                            , parfois avec une posture dynamique qui capte la joie enfantine;
+                            panelPosition: -1.076 -0.035 0.057; 
+                            panelRotation: -89.070 164.397 14.602">
+        </a-entity>
+        </a-entity>
+
+        <a-entity
+            gltf-model="Ressource/assets/peinture.glb" 
+            position="0 0 -0.358" 
+            scale="1 1 1"
+            rotation="0 0 0">
+        </a-entity>
+
+        <!-- Caméra et contrôles -->
+        <a-entity position="-18.384 0.702 -0.180" rotation="0.000 -89.268 0.000">
+            <a-camera>
+                <a-cursor></a-cursor>
+            </a-camera>
+        </a-entity>
+    </a-scene>
+</body>
+</html>
