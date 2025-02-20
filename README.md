@@ -15,6 +15,6 @@ Il ne vous reste plus qu'a explorer et profiter de l'experience
 
 Comment Interagir avec L'environnement :
 	 Pour vous déplacer utiliser la souris pour orienter le regard et les touches directionnelle du pc pour vous 	déplacer 
-
 	Quand vous regarder un objet il s'agrandit automatiquement pour mieux le voir et un audio se lance pour vous décrire l'oeuvre . Aussi un description textuelle s'affiche dans le cadre a coté de l'oeuvre 
+ 	Quand vous lancer la scene et effectué une premiere interaction ca lance un son d'ambiance que vous pouvez reglér le volume avec le slider en bas 
  
