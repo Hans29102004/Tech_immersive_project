@@ -9,17 +9,52 @@
     <script src="js/components/artwork-highlight.js"></script>
     <script src="js/components/artwork-audio.js"></script>
     <script src="js/components/artwork-info.js"></script>
+    <script src="js/components/main.js"></script>
 
     
 </head>
 <body>
     <a-scene background="color: #ECECEC">
+        
+        <div id="volume-control">
+            <label for="volume">Volume :</label>
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
+        </div>
+        <style>
+            #volume-control {
+                position: fixed;
+                left: 20px;
+                bottom: 20px;
+                background: rgba(0, 0, 0, 0.7);
+                padding: 10px;
+                border-radius: 5px;
+                color: white;
+                font-family: Arial, sans-serif;
+                z-index: 1000; /* S'assurer que l'élément est bien visible */
+            }
+        
+            input[type="range"] {
+                width: 100px;
+            }
+        </style>
         <!-- Lumières -->
         <a-light type="ambient" intensity="0.5"></a-light>
         <a-light type="directional" position="3 5 2" intensity="0.8"></a-light>
 
         <!-- Ciel -->
         <a-sky color="#DDDDFF"></a-sky>
+        <a-sound id="ambientSound" 
+                src="Ressource/audio/ambiance.mp3" 
+                autoplay="false" 
+                loop="true" 
+                position="10 0 10" 
+                distanceModel="linear" 
+                maxDistance="10000000" 
+                refDistance="10000000" 
+                rolloffFactor="100000"
+                volume="5">
+        </a-sound>
+
 
         <!-- Ciel -->
         <a-gltf-model

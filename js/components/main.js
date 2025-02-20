@@ -1,25 +1,39 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Récupérer l'élément du son ambiant
     let ambientSound = document.querySelector("#ambientSound");
-    
+
     if (!ambientSound) {
         console.error("Ambient sound entity not found !");
         return;
     }
 
     // Définir le volume initial
-    ambientSound.setAttribute("volume", 0.5);
+    ambientSound.setAttribute("sound", "volume: 50");
 
-    // Ajouter un événement pour changer le volume avec le slider
-    document.getElementById("volume").addEventListener("input", function () {
-        let newVolume = this.value;
-        ambientSound.setAttribute("volume", newVolume);
-    });
+    // Vérifier si l'autoplay est bloqué
+    let playAudio = () => {
+        if (ambientSound.components.sound) {
+            ambientSound.components.sound.playSound();
+            document.removeEventListener("click", playAudio); // Supprimer après premier clic
+        }
+    };
 
-    // Résoudre le problème de lecture automatique sur certains navigateurs
+    // Essayer de jouer le son après le chargement de la scène
     let scene = document.querySelector("a-scene");
     scene.addEventListener("loaded", function () {
-        ambientSound.components.sound.playSound();
+        setTimeout(() => {
+            if (ambientSound.components.sound) {
+                ambientSound.components.sound.playSound();
+            }
+        }, 1000);
+    });
+
+    // Débloquer le son au premier clic de l'utilisateur
+    document.addEventListener("click", playAudio);
+
+    // Gestion du volume via le slider
+    document.getElementById("volume").addEventListener("input", function () {
+        let newVolume = this.value;
+        ambientSound.setAttribute("sound", `volume: ${newVolume}`);
     });
 
     console.log("Volume control initialized !");
